@@ -19,26 +19,20 @@ e.grid(
 
 # funções operadores
 
-
 def botao_divisao():
     return
-
 
 def botao_click():
     return
 
-
 def botao_multriplica():
     return
-
 
 def botao_subtracao():
     return
 
-
 def botao_adicao():
     return
-
 
 def botao_limpa():
     return
@@ -46,7 +40,6 @@ def botao_limpa():
 
 def botao_igual():
     return
-
 
 divide = Button(root,
                 text='/',
