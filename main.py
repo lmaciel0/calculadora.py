@@ -1,48 +1,33 @@
 from tkinter import *
-# Importando a biblioteca tkinter para criar interfaces gráficas
-
 
 root = Tk()
-# Criando uma instância da janela principal
 
 root.title('Sua calculadora')
-# Definindo o título da janela como 'Sua calculadora'
 
 root.geometry('408x355')
-# Definindo a dimensão inicial da janela como 408x355 pixels
 
 root.minsize(408, 355)
 root.maxsize(408, 355)
-# Limitando o redimensionamento da janela para as dimensões definidas acima
 
-# Inicializando variáveis para armazenar números e operações
 numero1 = ''
 divisao = FALSE
 multiplica = FALSE
 adicao = FALSE
 subtracao = FALSE
 
-root.configure(background='#000000')  # Cor de fundo preta
+root.configure(background='#000000')
 
 e = Entry(root, width=15, borderwidth=4, relief=FLAT, fg='#FFFFFF',
           bg='#444444', font=('Helvetica', 20, 'bold'), justify=CENTER)
-# Criando uma caixa de entrada de texto (Entry) com várias opções configuradas
-
 e.grid(
     row=0,
     column=0,
     columnspan=4,
     pady=2
 )
-# Posicionando a caixa de entrada na primeira linha, ocupando 4 colunas e definindo espaçamento
-
-
-# Definindo as funções para os operadores e outros botões
 
 def botao_click(num):
     e.insert(END, num)
-# Função para adicionar números ao campo de entrada
-
 
 def botao_divisao():
     global numero1
@@ -94,8 +79,6 @@ def botao_igual():
     if divisao == TRUE:
         e.insert(0, int(numero1) // int(numero2))
         divisao = FALSE
-# Função para calcular o resultado da operação
-
 
 divide = Button(root,
                 text='/',
@@ -326,5 +309,3 @@ igual = Button(root,
 igual.grid(row=4, column=4)
 
 root.mainloop()
-# Iniciando o loop principal da GUI para exibir a interface ao usuário
-
