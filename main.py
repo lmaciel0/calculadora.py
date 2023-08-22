@@ -6,6 +6,12 @@ root.geometry('408x355')
 root.minsize(408, 355)
 root.maxsize(408, 355)
 
+numero1 = ''
+divisao = FALSE
+multiplica = FALSE
+adicao = FALSE
+subtracao = FALSE
+
 root.configure(background='#000000')  # Cor de fundo preta
 
 e = Entry(root, width=15, borderwidth=4, relief=FLAT, fg='#FFFFFF',
@@ -19,27 +25,59 @@ e.grid(
 
 # funções operadores
 
-def botao_divisao():
-    return
+def botao_click(num):
+    e.insert(END, num)
 
-def botao_click():
-    return
+def botao_divisao():
+    global numero1
+    global divisao
+    divisao = TRUE
+    numero1 = e.get()
+    e.delete(0, END)
 
 def botao_multriplica():
-    return
+    global numero1
+    global multiplica
+    multiplica = TRUE
+    numero1 = e.get()
+    e.delete(0, END)
 
 def botao_subtracao():
-    return
+    global numero1
+    global subtracao
+    subtracao = TRUE
+    numero1 = e.get()
+    e.delete(0, END)
 
 def botao_adicao():
-    return
+    global numero1
+    global adicao
+    adicao = TRUE
+    numero1 = e.get()
+    e.delete(0, END)
 
 def botao_limpa():
-    return
-
+    e.delete(0, END)
 
 def botao_igual():
-    return
+    global subtracao
+    global multiplica
+    global adicao
+    global divisao
+    numero2 = e.get()
+    e.delete(0, END)
+    if adicao == TRUE:
+        e.insert(0, int(numero1) + int(numero2))
+        adicao = FALSE
+    if multiplica == TRUE:
+        e.insert(0, int(numero1) * int(numero2))
+        multiplica = FALSE
+    if subtracao == TRUE:
+        e.insert(0, int(numero1) - int(numero2))
+        subtracao = FALSE
+    if divisao == TRUE:
+        e.insert(0, int(numero1) // int(numero2))
+        divisao = FALSE
 
 divide = Button(root,
                 text='/',
